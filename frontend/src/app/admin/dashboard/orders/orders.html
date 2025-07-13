@@ -1,0 +1,46 @@
+<div class="orders-container">
+  <h2>Orders Management</h2>
+
+  <form
+    [formGroup]="filterForm"
+    class="filter-form"
+    (ngSubmit)="$event.preventDefault()"
+  >
+    <input
+      type="text"
+      placeholder="Search by Order ID or Customer"
+      formControlName="searchTerm"
+      class="search-input"
+    />
+
+    <select formControlName="selectedStatus" class="status-select">
+      <option value="">All Statuses</option>
+      <option *ngFor="let status of statuses" [value]="status">
+        {{ status }}
+      </option>
+    </select>
+  </form>
+
+  <table class="orders-table">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Customer</th>
+        <th>Date</th>
+        <th>Total (₹)</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of filteredOrdersList">
+        <td>{{ order.id }}</td>
+        <td>{{ order.customer }}</td>
+        <td>{{ order.date | date : "mediumDate" }}</td>
+        <td>{{ order.total | currency : "INR" : "symbol" }}</td>
+        <td [class]="'status ' + order.status.toLowerCase()">
+          {{ order.status }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,71 @@
+<main class="main-content">
+  <!-- Welcome Section -->
+  <section class="welcome">
+    <h1>Welcome back, {{ user?.fullName || user?.username || "User" }}</h1>
+    <p class="subheading">
+      Here’s what’s happening in your health journey today.
+    </p>
+  </section>
+
+  <!-- Summary Cards -->
+  <section class="summary-cards">
+    <div class="card" *ngFor="let card of summaryCards">
+      <div class="title">{{ card.title }}</div>
+      <div class="value">{{ card.prefix }}{{ card.value }}</div>
+    </div>
+  </section>
+
+  <!-- Recent Orders -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Recent Orders</h2>
+    </div>
+    <div class="order-status">
+      <div class="status">Delivered</div>
+      <div class="status">In Transit</div>
+      <div class="status">Processing</div>
+      <div class="status">Packed</div>
+    </div>
+  </section>
+
+  <!-- Recommended Products -->
+  <section class="section">
+    <h2>Recommended for You</h2>
+    <div class="recommend-grid">
+      <div class="product-card" *ngFor="let product of recommendedProducts">
+        <img [src]="product.img" [alt]="product.name" />
+        <h3>{{ product.name }}</h3>
+        <p>₹{{ product.price }}</p>
+        <button (click)="addToCart(product)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reminders -->
+  <section class="section">
+    <h2>Health Reminders</h2>
+
+    <div class="reminder-input">
+      <input
+        #reminderInput
+        type="text"
+        placeholder="Add new reminder (e.g., '10:00 AM: Take Aspirin')"
+        (keyup.enter)="
+          addReminder(reminderInput.value); reminderInput.value = ''
+        "
+      />
+      <button
+        (click)="addReminder(reminderInput.value); reminderInput.value = ''"
+      >
+        Add
+      </button>
+    </div>
+
+    <ul class="reminders">
+      <li *ngFor="let reminder of reminders; let i = index">
+        {{ reminder }}
+        <button class="delete-btn" (click)="deleteReminder(i)">🗑️</button>
+      </li>
+    </ul>
+  </section>
+</main>

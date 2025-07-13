@@ -1,0 +1,217 @@
+.support-page {
+  margin-left: 230px;
+  padding: 2.5rem 3rem;
+  background-color: #f0f4f8;
+  font-family: 'Poppins', sans-serif;
+  color: #37474f;
+  animation: fadeInSlide 0.6s ease-in-out;
+
+  @keyframes fadeInSlide {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .page-header {
+    margin-bottom: 2.5rem;
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #00796b;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #607d8b;
+    }
+  }
+
+  .support-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+
+    .option-card {
+      background: #ffffff;
+      border: 1px solid #cfd8dc;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s, box-shadow 0.3s;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        color: #004d40;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        margin: 0.3rem 0;
+        font-size: 0.95rem;
+      }
+
+      button {
+        margin-top: 1rem;
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+        background: #00796b;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background: #004d40;
+        }
+      }
+    }
+  }
+
+  .topics {
+    margin-bottom: 2.5rem;
+
+    h2 {
+      font-size: 1.6rem;
+      color: #00796b;
+      margin-bottom: 1rem;
+    }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+
+      .topic-card {
+        background: #ffffff;
+        border: 1px solid #cfd8dc;
+        border-radius: 10px;
+        padding: 1rem;
+        text-align: center;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.2s ease;
+
+        &:hover {
+          background: #e0f2f1;
+          transform: scale(1.03);
+        }
+      }
+    }
+  }
+
+  .submit-request {
+    background: #ffffff;
+    border: 1px solid #cfd8dc;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+
+    h2 {
+      font-size: 1.6rem;
+      color: #00796b;
+      margin-bottom: 1.5rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      input[type='text'],
+      select,
+      textarea,
+      input[type='file'] {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        border: 1px solid #b0bec5;
+        border-radius: 8px;
+        background: #f9f9f9;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          border-color: #00796b;
+          outline: none;
+          box-shadow: 0 0 5px rgba(0, 121, 107, 0.3);
+        }
+      }
+
+      button[type='submit'] {
+        align-self: flex-start;
+        padding: 0.75rem 1.5rem;
+        background: #00796b;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background: #004d40;
+        }
+      }
+    }
+  }
+
+  .faq {
+    h2 {
+      font-size: 1.6rem;
+      color: #00796b;
+      margin-bottom: 1rem;
+    }
+
+    input[type='text'] {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #b0bec5;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      background: #f9f9f9;
+
+      &:focus {
+        border-color: #00796b;
+        outline: none;
+      }
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+
+      .faq-item {
+        background: #ffffff;
+        border: 1px solid #cfd8dc;
+        border-radius: 10px;
+        padding: 1rem;
+
+        h4 {
+          font-size: 1.1rem;
+          margin-bottom: 0.5rem;
+          color: #004d40;
+        }
+
+        p {
+          font-size: 0.95rem;
+          color: #455a64;
+        }
+      }
+    }
+  }
+}

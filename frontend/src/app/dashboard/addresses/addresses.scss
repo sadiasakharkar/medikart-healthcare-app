@@ -1,0 +1,248 @@
+.address-container {
+  padding: 2.5rem 3rem;
+  margin-left: 230px;
+  background-color: #f4f6f8;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  animation: fadeInSlide 0.6s ease-in-out;
+
+  .address-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #058a55;
+      margin-bottom: 0.3rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #607d8b;
+    }
+
+    .btn-primary {
+      background: #027f1b;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background: #014b1b;
+      }
+    }
+  }
+
+  .address-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .address-card {
+    background: #ffffff;
+    border: 1px solid #cfd8dc;
+    border-radius: 12px;
+    padding: 1.8rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    &.default {
+      border: 2px solid #027f1b;
+    }
+
+    .card-content {
+      .address-tag {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #027f1b;
+
+        .default-badge {
+          background: #027f1b;
+          color: #fff;
+          font-size: 0.75rem;
+          padding: 0.25rem 0.6rem;
+          border-radius: 4px;
+          margin-left: 0.5rem;
+        }
+      }
+
+      .name {
+        font-weight: 600;
+        margin: 0.5rem 0;
+        color: #263238;
+      }
+
+      p {
+        margin: 0.25rem 0;
+        font-size: 0.95rem;
+        color: #027f1b
+      }
+    }
+
+    .card-actions {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+
+      .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.95rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      .btn-light {
+        background: #eceff1;
+        color: #263238;
+
+        &:hover {
+          background: #e0e0e0;
+        }
+      }
+
+      .btn-danger {
+        background: #ffebee;
+        color: #d32f2f;
+
+        &:hover {
+          background: #ffcdd2;
+        }
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 1px solid #027f1b;
+        color: #027f1b;
+
+        &:hover {
+          background: #e3f2fd;
+        }
+      }
+    }
+  }
+
+  .new-address-form {
+    margin-top: 3rem;
+    padding: 2.5rem;
+    background: #ffffff;
+    border: 1px solid #cfd8dc;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+
+    &.active {
+      max-height: 1000px;
+      opacity: 1;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: #027f1b;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+
+      input {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+        border: 1px solid #b0bec5;
+        border-radius: 8px;
+        background: #f9f9f9;
+        transition: 0.3s;
+
+        &:focus {
+          border-color: #027f1b;
+          box-shadow: 0 0 6px rgba(30, 136, 229, 0.3);
+        }
+      }
+    }
+
+    .form-options {
+      margin: 1.5rem 0;
+      display: flex;
+      gap: 1.5rem;
+
+      label {
+        font-size: 1rem;
+        color: #37474f;
+      }
+
+      input[type='radio'] {
+        margin-right: 0.4rem;
+      }
+    }
+
+    .checkbox {
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      color: #37474f;
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 1rem;
+
+      .btn-primary {
+        background: #027f1b;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:hover {
+          background: #027f1b;
+        }
+      }
+
+      .btn-light {
+        background: #eceff1;
+        border: 1px solid #cfd8dc;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        font-size: 1rem;
+        color: #37474f;
+
+        &:hover {
+          background: #e0e0e0;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

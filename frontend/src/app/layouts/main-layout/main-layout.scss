@@ -1,0 +1,12 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #ddd;
+  background-color: #f9f9f9;
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+}

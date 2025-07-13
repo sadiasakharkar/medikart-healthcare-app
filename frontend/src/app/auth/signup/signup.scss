@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+$bg-color: #f9fbfc; // lighter clinic white
+$primary-color: #00796b;
+$input-bg: #ffffff;
+$input-border: #cfd8dc;
+$dark-text: #263238;
+
+.signup-container {
+  max-width: 450px;
+  margin: 80px auto;
+  padding: 2.5rem;
+  background-color: $bg-color;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  animation: slideFadeIn 0.8s ease;
+
+  .title {
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: $dark-text;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    color: darken($dark-text, 15%);
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group {
+    text-align: left;
+    margin-bottom: 1.2rem;
+
+    label {
+      font-weight: 500;
+      color: $dark-text;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 0.95rem;
+      border: 1px solid $input-border;
+      border-radius: 6px;
+      background-color: $input-bg;
+      color: $dark-text;
+      transition: border 0.3s, box-shadow 0.3s;
+
+      &::placeholder {
+        color: #90a4ae;
+        font-weight: 400;
+      }
+
+      &:focus {
+        border-color: $primary-color;
+        box-shadow: 0 0 10px rgba(0, 121, 107, 0.3);
+      }
+    }
+  }
+
+  .terms {
+    font-size: 0.85rem;
+    text-align: left;
+    margin-bottom: 1.2rem;
+    color: $dark-text;
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: $primary-color;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    animation: fadeInUp 1s ease;
+
+    &:hover {
+      background-color: darken($primary-color, 8%);
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+
+  .login-link {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: $dark-text;
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+      margin-left: 4px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Footer (inherited from login.scss)
+@import '../login/login.scss';
+
+/* Animations */
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

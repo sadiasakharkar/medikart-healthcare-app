@@ -1,0 +1,125 @@
+<div class="address-container">
+  <!-- Header -->
+  <div class="address-header">
+    <div>
+      <h1>My Addresses</h1>
+      <p>Manage your saved delivery locations.</p>
+    </div>
+    <button class="btn btn-primary" (click)="toggleForm()">
+      + Add New Address
+    </button>
+  </div>
+
+  <!-- Address Cards Grid -->
+  <div class="address-grid">
+    <div
+      class="address-card"
+      *ngFor="let address of addresses; let i = index"
+      [class.default]="address.default"
+    >
+      <div class="card-content">
+        <div class="address-tag">
+          {{ address.label }}
+          <span class="default-badge" *ngIf="address.default">Default</span>
+        </div>
+        <p class="name">{{ address.name }}</p>
+        <p>{{ address.street }}, {{ address.city }}, {{ address.state }}</p>
+        <p>Pincode: {{ address.pincode }}</p>
+        <p>Phone: +91 {{ address.phone }}</p>
+      </div>
+      <div class="card-actions">
+        <button class="btn btn-light" (click)="editAddress(i)">Edit</button>
+        <button class="btn btn-danger" (click)="deleteAddress(i)">
+          Delete
+        </button>
+        <button
+          class="btn btn-outline"
+          *ngIf="!address.default"
+          (click)="setDefault(i)"
+        >
+          Set as Default
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add/Edit Address Form -->
+  <div class="new-address-form" [class.active]="showAddForm">
+    <h2 *ngIf="editingIndex === null">Add New Address</h2>
+    <h2 *ngIf="editingIndex !== null">Edit Address</h2>
+
+    <form #addressForm="ngForm" (ngSubmit)="addAddress(addressForm)">
+      <div class="form-grid">
+        <input
+          name="name"
+          type="text"
+          placeholder="Full Name"
+          required
+          #name="ngModel"
+          ngModel
+        />
+        <input
+          name="phone"
+          type="tel"
+          placeholder="Phone Number"
+          required
+          #phone="ngModel"
+          ngModel
+        />
+        <input
+          name="street"
+          type="text"
+          placeholder="Street Address"
+          required
+          #street="ngModel"
+          ngModel
+        />
+        <input
+          name="city"
+          type="text"
+          placeholder="City"
+          required
+          #city="ngModel"
+          ngModel
+        />
+        <input
+          name="state"
+          type="text"
+          placeholder="State"
+          required
+          #state="ngModel"
+          ngModel
+        />
+        <input
+          name="pincode"
+          type="text"
+          placeholder="Pincode"
+          required
+          #pincode="ngModel"
+          ngModel
+        />
+      </div>
+
+      <div class="form-options">
+        <label
+          ><input type="radio" name="type" value="Home" checked /> Home</label
+        >
+        <label><input type="radio" name="type" value="Office" /> Office</label>
+        <label><input type="radio" name="type" value="Other" /> Other</label>
+      </div>
+
+      <label class="checkbox">
+        <input type="checkbox" name="defaultCheck" /> Set as default
+      </label>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">
+          {{ editingIndex === null ? "Save Address" : "Update Address" }}
+        </button>
+        <button type="button" class="btn btn-light" (click)="cancelForm()">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="my-orders-page">
+  <h1>My Orders</h1>
+  <p class="subheading">Track and manage all your medicine orders here</p>
+
+  <!-- Filters -->
+  <div class="filters">
+    <input type="text" placeholder="Search by Order ID or Medicine" />
+    <select>
+      <option>All Status</option>
+      <option>Delivered</option>
+      <option>In Transit</option>
+      <option>Processing</option>
+    </select>
+    <select>
+      <option>Last 30 Days</option>
+      <option>Last 6 Months</option>
+      <option>This Year</option>
+    </select>
+    <select>
+      <option>Newest First</option>
+      <option>Oldest First</option>
+    </select>
+  </div>
+
+  <!-- Orders List -->
+  <div class="orders-list">
+    <div class="order-card" *ngFor="let order of orders">
+      <div class="order-header">
+        <div class="order-id">Order #{{ order.id }}</div>
+        <div class="status {{ order.status.toLowerCase().replace(' ', '-') }}">
+          {{ order.status }}
+        </div>
+      </div>
+
+      <div class="product-list">
+        <div class="product" *ngFor="let item of order.items">
+          <div class="details">
+            <h3>{{ item.name }}</h3>
+            <p>Qty: {{ item.qty }} · ₹{{ item.price }}/unit</p>
+          </div>
+          <div class="price">₹{{ item.qty * item.price }}</div>
+        </div>
+      </div>
+
+      <div class="order-summary">Total: ₹{{ getOrderTotal(order.items) }}</div>
+
+      <div class="actions">
+        <button class="primary">View Details</button>
+        <button class="outline" (click)="reorder(order.items)">Reorder</button>
+        <button class="outline">Download Invoice</button>
+      </div>
+    </div>
+  </div>
+</div>

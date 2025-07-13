@@ -1,0 +1,125 @@
+<div class="admin-dashboard">
+  <h1 class="admin-title">Medikart Admin Dashboard</h1>
+  <p class="admin-subtitle">
+    Manage your inventory, orders, and returns — all in one place.
+  </p>
+
+  <!-- Stats Overview -->
+  <section class="admin-stats">
+    <div class="stat-card">
+      <h3>Total Products</h3>
+      <p>1,245</p>
+    </div>
+    <div class="stat-card">
+      <h3>Orders Today</h3>
+      <p>87</p>
+    </div>
+    <div class="stat-card">
+      <h3>Pending Returns</h3>
+      <p>6</p>
+    </div>
+    <div class="stat-card">
+      <h3>Low Stock Items</h3>
+      <p>12</p>
+    </div>
+  </section>
+
+  <!-- Inventory Table -->
+  <section class="inventory-section">
+    <h2>Inventory Management</h2>
+    <table class="inventory-table">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Category</th>
+          <th>Stock</th>
+          <th>Price</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Paracetamol 500mg</td>
+          <td>Medicine</td>
+          <td>40</td>
+          <td>₹30</td>
+          <td><span class="in-stock">In Stock</span></td>
+          <td><button>Edit</button> <button class="danger">Delete</button></td>
+        </tr>
+        <tr>
+          <td>Blood Pressure Monitor</td>
+          <td>Equipment</td>
+          <td>5</td>
+          <td>₹1,250</td>
+          <td><span class="low-stock">Low Stock</span></td>
+          <td><button>Edit</button> <button class="danger">Delete</button></td>
+        </tr>
+        <!-- Add more rows dynamically -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Orders Section -->
+  <section class="orders-section">
+    <h2>Recent Orders</h2>
+    <table class="orders-table">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>User</th>
+          <th>Date</th>
+          <th>Total</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>#MK001234</td>
+          <td>Sadia Sakharkar</td>
+          <td>2025-07-09</td>
+          <td>₹180</td>
+          <td><span class="delivered">Delivered</span></td>
+          <td><button>Details</button></td>
+        </tr>
+        <tr>
+          <td>#MK001235</td>
+          <td>Aman Verma</td>
+          <td>2025-07-09</td>
+          <td>₹1,250</td>
+          <td><span class="processing">Processing</span></td>
+          <td><button>Details</button></td>
+        </tr>
+        <!-- More orders -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Returns Section -->
+  <section class="returns-section">
+    <h2>Returns</h2>
+    <div class="returns-list">
+      <div class="return-item">
+        <p><strong>Return ID:</strong> RT001</p>
+        <p><strong>Product:</strong> Glucometer</p>
+        <p><strong>User:</strong> Riya Mehta</p>
+        <p><strong>Reason:</strong> Faulty device</p>
+        <button>Process Return</button>
+      </div>
+      <div class="return-item">
+        <p><strong>Return ID:</strong> RT002</p>
+        <p><strong>Product:</strong> Thermometer</p>
+        <p><strong>User:</strong> Aditya Joshi</p>
+        <p><strong>Reason:</strong> Broken glass</p>
+        <button>Process Return</button>
+      </div>
+      <!-- More returns -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="admin-footer">
+    <p>© {{ currentYear }} Medikart Admin Panel. All rights reserved.</p>
+  </footer>
+</div>

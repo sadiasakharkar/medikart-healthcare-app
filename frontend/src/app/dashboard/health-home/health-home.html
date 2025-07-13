@@ -1,0 +1,71 @@
+<div class="health-home">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Your Health is Our Priority</h1>
+      <p class="tagline">
+        Find all your medicines & healthcare essentials in one place
+      </p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary">Shop Now</button>
+        <button
+          class="btn btn-outline"
+          [routerLink]="'/dashboard/prescriptions'"
+        >
+          Upload Prescription
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="products">
+    <div class="section-header">
+      <h2>Featured Products</h2>
+      <a *ngIf="!showAllProducts" (click)="viewAll()" class="view-link">
+        View All
+      </a>
+    </div>
+    <div class="product-grid">
+      <div class="product-card" *ngFor="let product of visibleProducts">
+        <div class="image-wrapper">
+          <img [src]="product.img" [alt]="product.name" class="product-image" />
+        </div>
+        <h3>{{ product.name }}</h3>
+        <p class="desc">{{ product.description }}</p>
+        <div class="price">
+          <span class="original">₹{{ product.original }}</span>
+          <span class="discounted">₹{{ product.discounted }}</span>
+        </div>
+        <button (click)="addToCart(product)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offer Banner -->
+  <section class="offer-banner">
+    <div class="offer-box">
+      <h3>30% OFF on Your First Order</h3>
+      <p>Use Code <strong>FIRST30</strong> · Valid Till July 31</p>
+      <button class="btn btn-primary">Shop Now</button>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-us">
+    <h2>Why Choose Medikart</h2>
+    <div class="why-grid">
+      <div class="why-card">Fast Delivery</div>
+      <div class="why-card">Genuine Products</div>
+      <div class="why-card">24/7 Support</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>
+      © {{ currentYear }} Medikart · <a href="#">Privacy</a> ·
+      <a href="#">Terms</a>
+    </p>
+  </footer>
+</div>

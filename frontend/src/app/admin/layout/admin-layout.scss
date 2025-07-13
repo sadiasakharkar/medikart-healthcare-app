@@ -1,0 +1,117 @@
+.admin-layout {
+  display: flex;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 260px;
+  background-color: #004d4d; /* Slightly richer teal */
+  color: #e0f2f1;
+  padding: 2rem 1.8rem;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.sidebar h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  color: #a7ffeb;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 1.5rem;
+}
+
+.sidebar nav ul li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #b2dfdb;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
+  user-select: none;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.router-link-active {
+  background-color: #00bfa5;
+  color: #004d40;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 191, 165, 0.4);
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  padding: 2.5rem 3rem;
+  background: #fff;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.03);
+  overflow-y: auto;
+  border-radius: 0 10px 10px 0;
+}
+
+/* Scrollbar styling for main-content */
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background-color: #00bfa5;
+  border-radius: 10px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    padding: 1rem;
+    justify-content: space-around;
+  }
+
+  .sidebar h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+
+  .sidebar nav ul {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .sidebar nav ul li {
+    margin-bottom: 0;
+  }
+
+  .main-content {
+    padding: 1.5rem;
+    border-radius: 0;
+  }
+}

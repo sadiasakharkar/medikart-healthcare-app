@@ -1,0 +1,53 @@
+<div class="returns-container" [formGroup]="returnForm">
+  <h2 class="page-title">Return Requests</h2>
+
+  <div class="search-filter">
+    <input
+      type="text"
+      placeholder="Search by Order ID or Customer"
+      formControlName="search"
+    />
+    <select formControlName="status">
+      <option value="">All Statuses</option>
+      <option value="Pending">Pending</option>
+      <option value="Approved">Approved</option>
+      <option value="Rejected">Rejected</option>
+    </select>
+  </div>
+
+  <table class="returns-table">
+    <thead>
+      <tr>
+        <th>Return ID</th>
+        <th>Order ID</th>
+        <th>Customer</th>
+        <th>Product</th>
+        <th>Reason</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let return of filteredReturns">
+        <td>{{ return.returnId }}</td>
+        <td>{{ return.orderId }}</td>
+        <td>{{ return.customer }}</td>
+        <td>{{ return.product }}</td>
+        <td>{{ return.reason }}</td>
+        <td>
+          <span class="status" [ngClass]="return.status.toLowerCase()">{{
+            return.status
+          }}</span>
+        </td>
+        <td>
+          <button *ngIf="return.status === 'Pending'" (click)="approve(return)">
+            Approve
+          </button>
+          <button *ngIf="return.status === 'Pending'" (click)="reject(return)">
+            Reject
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

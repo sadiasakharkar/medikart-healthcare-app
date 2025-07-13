@@ -1,0 +1,147 @@
+.payment-methods-page {
+  padding: 2.5rem 3rem;
+  margin-left: 230px;
+  background-color: #f0f4f8;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  animation: fadeInSlide 0.6s ease-in-out;
+
+  @keyframes fadeInSlide {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .page-header {
+    margin-bottom: 2.5rem;
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #00796b;
+      margin-bottom: 0.3rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #607d8b;
+    }
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #00796b;
+  }
+
+  .card-list,
+  .upi-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .card-box,
+  .upi-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #cfd8dc;
+    border-radius: 12px;
+    padding: 1.5rem;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    animation: fadeInSlide 0.4s ease-out;
+
+    &:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      transform: translateY(-4px);
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .upi-id {
+      font-size: 0.95rem;
+      color: #111;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .card-details {
+    h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: #004d40;
+    }
+
+    p {
+      margin: 0.2rem 0;
+      font-size: 0.95rem;
+      color: #37474f;
+    }
+  }
+
+  .card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-end;
+
+    .badge {
+      background: #00796b;
+      color: #fff;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.75rem;
+      border-radius: 20px;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    button {
+      border: none;
+      background: #eceff1;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      color: #37474f;
+      transition: background 0.2s, transform 0.2s ease;
+
+      &:hover {
+        background: #e0e0e0;
+        transform: scale(1.03);
+      }
+    }
+  }
+
+  .add-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    background: #00796b;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      background: #004d40;
+      transform: scale(1.03);
+    }
+  }
+}

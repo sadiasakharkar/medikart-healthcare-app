@@ -1,0 +1,140 @@
+.
+├── README.md
+├── angular.json
+├── package-lock.json
+├── package.json
+├── paracetamol.png
+├── project-structure.txt
+├── public
+│   └── favicon.ico
+├── src
+│   ├── app
+│   │   ├── app.component.html
+│   │   ├── app.component.scss
+│   │   ├── app.component.ts
+│   │   ├── app.config.ts
+│   │   ├── app.html
+│   │   ├── app.routes.ts
+│   │   ├── app.scss
+│   │   ├── app.spec.ts
+│   │   ├── app.ts
+│   │   ├── auth
+│   │   │   ├── auth-module.ts
+│   │   │   ├── auth.html
+│   │   │   ├── auth.scss
+│   │   │   ├── auth.spec.ts
+│   │   │   ├── auth.ts
+│   │   │   ├── login
+│   │   │   │   ├── login.html
+│   │   │   │   ├── login.scss
+│   │   │   │   ├── login.spec.ts
+│   │   │   │   └── login.ts
+│   │   │   └── signup
+│   │   │       ├── signup.html
+│   │   │       ├── signup.scss
+│   │   │       ├── signup.spec.ts
+│   │   │       └── signup.ts
+│   │   ├── core
+│   │   │   ├── api.service.ts
+│   │   │   ├── api.spec.ts
+│   │   │   ├── api.ts
+│   │   │   ├── auth-guard.spec.ts
+│   │   │   ├── auth-guard.ts
+│   │   │   ├── auth.service.ts
+│   │   │   ├── auth.spec.ts
+│   │   │   ├── auth.ts
+│   │   │   └── core-module.ts
+│   │   ├── dashboard
+│   │   │   ├── account-settings
+│   │   │   │   ├── account-settings.html
+│   │   │   │   ├── account-settings.scss
+│   │   │   │   ├── account-settings.spec.ts
+│   │   │   │   └── account-settings.ts
+│   │   │   ├── addresses
+│   │   │   │   ├── addresses.html
+│   │   │   │   ├── addresses.scss
+│   │   │   │   ├── addresses.spec.ts
+│   │   │   │   └── addresses.ts
+│   │   │   ├── dashboard-module.ts
+│   │   │   ├── dashboard.html
+│   │   │   ├── dashboard.scss
+│   │   │   ├── dashboard.spec.ts
+│   │   │   ├── dashboard.ts
+│   │   │   ├── health-home
+│   │   │   │   ├── health-home.html
+│   │   │   │   ├── health-home.scss
+│   │   │   │   ├── health-home.spec.ts
+│   │   │   │   └── health-home.ts
+│   │   │   ├── my-orders
+│   │   │   │   ├── my-orders.html
+│   │   │   │   ├── my-orders.scss
+│   │   │   │   ├── my-orders.spec.ts
+│   │   │   │   └── my-orders.ts
+│   │   │   ├── overview
+│   │   │   │   ├── overview.html
+│   │   │   │   ├── overview.scss
+│   │   │   │   ├── overview.spec.ts
+│   │   │   │   └── overview.ts
+│   │   │   ├── payment-method
+│   │   │   │   ├── payment-method.html
+│   │   │   │   ├── payment-method.scss
+│   │   │   │   ├── payment-method.spec.ts
+│   │   │   │   └── payment-method.ts
+│   │   │   ├── prescriptions
+│   │   │   │   ├── prescriptions.html
+│   │   │   │   ├── prescriptions.scss
+│   │   │   │   ├── prescriptions.spec.ts
+│   │   │   │   └── prescriptions.ts
+│   │   │   ├── shopping-cart
+│   │   │   │   ├── shopping-cart.html
+│   │   │   │   ├── shopping-cart.scss
+│   │   │   │   ├── shopping-cart.spec.ts
+│   │   │   │   └── shopping-cart.ts
+│   │   │   ├── support
+│   │   │   │   ├── support.html
+│   │   │   │   ├── support.scss
+│   │   │   │   ├── support.spec.ts
+│   │   │   │   └── support.ts
+│   │   │   └── wishlist
+│   │   │       ├── wishlist.html
+│   │   │       ├── wishlist.scss
+│   │   │       ├── wishlist.spec.ts
+│   │   │       └── wishlist.ts
+│   │   ├── layouts
+│   │   │   └── main-layout
+│   │   │       ├── main-layout.html
+│   │   │       ├── main-layout.scss
+│   │   │       ├── main-layout.spec.ts
+│   │   │       └── main-layout.ts
+│   │   └── shared
+│   │       ├── card
+│   │       │   ├── card.html
+│   │       │   ├── card.scss
+│   │       │   ├── card.spec.ts
+│   │       │   └── card.ts
+│   │       ├── footer
+│   │       │   ├── footer.html
+│   │       │   ├── footer.scss
+│   │       │   ├── footer.spec.ts
+│   │       │   └── footer.ts
+│   │       ├── navbar
+│   │       │   ├── navbar.html
+│   │       │   ├── navbar.scss
+│   │       │   ├── navbar.spec.ts
+│   │       │   └── navbar.ts
+│   │       ├── shared-module.ts
+│   │       └── sidebar
+│   │           ├── sidebar.html
+│   │           ├── sidebar.scss
+│   │           ├── sidebar.spec.ts
+│   │           └── sidebar.ts
+│   ├── environments
+│   │   └── environment.ts
+│   ├── index.html
+│   ├── main.ts
+│   └── styles.scss
+├── tsconfig.app.json
+├── tsconfig.json
+└── tsconfig.spec.json
+
+27 directories, 111 files

@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+$primary: #00796b;
+$light-bg: #f4f6f8;
+$text-dark: #263238;
+$card-bg: #ffffff;
+$border: #e0e0e0;
+$shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: $light-bg;
+  color: $text-dark;
+}
+
+.health-home {
+  padding: 2rem;
+  margin-left: 240px;
+  transition: margin-left 0.3s ease;
+  animation: fadeIn 0.8s ease;
+}
+
+// Hero Section
+.hero {
+  background: linear-gradient(135deg, #e0f2f1, #ffffff);
+  padding: 5rem 2rem;
+  border-radius: 16px;
+  text-align: center;
+  margin-bottom: 3rem;
+
+  .hero-content {
+    max-width: 720px;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      color: darken($text-dark, 20%);
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+
+      .btn {
+        padding: 0.8rem 1.6rem;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &.btn-primary {
+          background-color: $primary;
+          color: #fff;
+          border: none;
+
+          &:hover {
+            background-color: darken($primary, 10%);
+          }
+        }
+
+        &.btn-outline {
+          background: transparent;
+          border: 2px solid $primary;
+          color: $primary;
+
+          &:hover {
+            background-color: rgba(0, 121, 107, 0.08);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Categories
+.categories {
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+
+    .category-card {
+      padding: 1.2rem;
+      background-color: $card-bg;
+      text-align: center;
+      border-radius: 10px;
+      font-weight: 500;
+      border: 1px solid $border;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: #e0f2f1;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+// Products
+.products {
+  margin-bottom: 3rem;
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    .view-link {
+      font-size: 1rem;
+      color: $primary;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.8rem;
+
+    .product-card {
+      background-color: $card-bg;
+      border: 1px solid $border;
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: $shadow;
+      transition: 0.3s ease;
+      animation: fadeInUp 0.5s ease;
+
+      &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      img {
+        width: 100%;
+        max-height: 180px;
+        object-fit: contain;
+        margin-bottom: 1.2rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.4rem;
+      }
+
+      .desc {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 1rem;
+      }
+
+      .price {
+        font-size: 1.1rem;
+        margin-bottom: 1.2rem;
+
+        .original {
+          text-decoration: line-through;
+          color: #aaa;
+          margin-right: 0.6rem;
+        }
+
+        .discounted {
+          color: $primary;
+          font-weight: 600;
+        }
+      }
+
+      .btn-add {
+        padding: 0.8rem 1.4rem;
+        font-size: 1rem;
+        background-color: $primary;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: darken($primary, 10%);
+        }
+      }
+    }
+  }
+}
+
+// Offer Banner
+.offer-banner {
+  background-color: #e0f7fa;
+  border-radius: 12px;
+  padding: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+
+  .offer-box {
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-primary {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      background-color: $primary;
+      color: #fff;
+      border: none;
+
+      &:hover {
+        background-color: darken($primary, 10%);
+      }
+    }
+  }
+}
+
+// Why Choose Us
+.why-us {
+  margin-bottom: 4rem;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .why-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    .why-card {
+      background-color: $card-bg;
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 500;
+      border-left: 4px solid $primary;
+      box-shadow: $shadow;
+      min-width: 200px;
+      text-align: center;
+    }
+  }
+}
+
+// Footer
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.95rem;
+  color: #607d8b;
+  border-top: 1px solid #cfd8dc;
+
+  a {
+    color: $primary;
+    margin: 0 0.5rem;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Responsive Sidebar Adjustment
+body.sidebar-collapsed .health-home {
+  margin-left: 80px;
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

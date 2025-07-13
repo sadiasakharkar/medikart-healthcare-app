@@ -1,0 +1,265 @@
+/* Medikart Theme – Cart & Checkout Page */
+.cart-checkout-page {
+  padding: 2.5rem 3rem;
+  margin-left: 230px;
+  background-color: #f0f4f8;
+  min-height: 100vh;
+  animation: fadeInSlide 0.6s ease-in-out;
+
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #00796b;
+    margin-bottom: 0.5rem;
+  }
+
+  .subheading {
+    color: #607d8b;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+
+  .cart-grid {
+    display: flex;
+    gap: 2rem;
+
+    .cart-items {
+      flex: 2;
+
+      h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        color: #37474f;
+
+        .clear-cart {
+          color: #00796b;
+          font-size: 0.9rem;
+          cursor: pointer;
+        }
+      }
+
+      .cart-item {
+        border-bottom: 1px solid #cfd8dc;
+        padding: 1rem 0;
+
+        .qty-price {
+          display: flex;
+          gap: 0.7rem;
+          align-items: center;
+
+          button {
+            padding: 0.3rem 0.6rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            background: #eceff1;
+            border: none;
+            border-radius: 4px;
+          }
+
+          .price {
+            margin-left: auto;
+            font-weight: 600;
+            color: #00796b;
+          }
+
+          .delete {
+            background: none;
+            color: #d32f2f;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .coupon-section {
+        margin-top: 1.5rem;
+        display: flex;
+        gap: 1rem;
+
+        input {
+          flex: 1;
+          padding: 0.6rem 1rem;
+          border: 1px solid #b0bec5;
+          border-radius: 6px;
+        }
+
+        button {
+          padding: 0.6rem 1.2rem;
+          background: #00796b;
+          color: white;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+        }
+      }
+
+      .cart-buttons {
+        margin-top: 1.5rem;
+        display: flex;
+        gap: 1rem;
+
+        button {
+          padding: 0.6rem 1.2rem;
+          border: 1px solid #b0bec5;
+          background: #eceff1;
+          border-radius: 6px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .cart-summary {
+      flex: 1;
+      padding: 1.5rem;
+      border: 1px solid #cfd8dc;
+      border-radius: 8px;
+      background: #ffffff;
+
+      .summary-row {
+        display: flex;
+        justify-content: space-between;
+        margin: 0.6rem 0;
+        color: #37474f;
+      }
+
+      .total {
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #00796b;
+      }
+
+      button {
+        margin-top: 1rem;
+        width: 100%;
+        padding: 0.8rem;
+        background: #00796b;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #004d40;
+        }
+      }
+
+      .note {
+        margin-top: 0.5rem;
+        font-size: 0.85rem;
+        color: #607d8b;
+        text-align: center;
+      }
+    }
+  }
+
+  .checkout {
+    margin-top: 3rem;
+
+    .checkout-grid {
+      display: flex;
+      gap: 2rem;
+
+      .shipping,
+      .payment,
+      .final-summary {
+        flex: 1;
+        padding: 1.5rem;
+        background: #ffffff;
+        border: 1px solid #cfd8dc;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.7rem;
+        color: #00796b;
+      }
+
+      label {
+        display: block;
+        margin: 0.5rem 0;
+        color: #37474f;
+      }
+
+      .address-box {
+        background: #f9f9f9;
+        padding: 0.8rem;
+        border-radius: 6px;
+        border: 1px solid #b0bec5;
+        position: relative;
+
+        .edit {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background: none;
+          border: none;
+          font-size: 1.1rem;
+          cursor: pointer;
+          color: #00796b;
+        }
+      }
+
+      .add-new {
+        margin-top: 0.8rem;
+        font-size: 0.9rem;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        color: #00796b;
+      }
+
+      .final-summary {
+        ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.3rem 0;
+            color: #37474f;
+          }
+        }
+
+        .place-order {
+          width: 100%;
+          margin-top: 1rem;
+          padding: 0.8rem;
+          background: #00796b;
+          color: white;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #004d40;
+          }
+        }
+
+        .note {
+          font-size: 0.8rem;
+          color: #607d8b;
+          margin-top: 0.6rem;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

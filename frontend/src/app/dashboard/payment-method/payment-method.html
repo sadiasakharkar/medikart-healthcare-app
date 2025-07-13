@@ -1,0 +1,40 @@
+<div class="payment-methods-page">
+  <div class="page-header">
+    <h1>Payment Methods</h1>
+    <p>Manage your saved cards and UPI details for faster checkout.</p>
+  </div>
+
+  <section class="cards-section">
+    <h2>Saved Cards</h2>
+    <div class="card-list">
+      <div class="card-box" *ngFor="let card of cards">
+        <div class="card-details">
+          <h3>{{ card.type }}</h3>
+          <p>{{ card.number }}</p>
+          <p>Expiry: {{ card.expiry }}</p>
+          <p>Cardholder: {{ card.holder }}</p>
+        </div>
+        <div class="card-actions">
+          <span *ngIf="card.default" class="badge">Default</span>
+          <button>Edit</button>
+          <button>Remove</button>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn">Add New Card</button>
+  </section>
+
+  <section class="upi-section">
+    <h2>Saved UPI IDs</h2>
+    <div class="upi-list">
+      <div class="upi-box" *ngFor="let upi of upiMethods">
+        <img [src]="upi.icon" [alt]="upi.name" />
+        <div>
+          <p>{{ upi.name }}</p>
+          <p class="upi-id" [innerHTML]="upi.id"></p>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn">Add New UPI</button>
+  </section>
+</div>

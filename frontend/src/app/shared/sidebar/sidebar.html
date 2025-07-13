@@ -1,0 +1,43 @@
+<div class="sidebar-wrapper">
+  <aside class="sidebar">
+    <div class="sidebar-brand">Medikart</div>
+
+    <nav>
+      <ul>
+        <li routerLink="/dashboard/overview" routerLinkActive="active">
+          <span>Overview</span>
+        </li>
+        <li routerLink="/dashboard/health-home" routerLinkActive="active">
+          <span>Health Home</span>
+        </li>
+        <li routerLink="/dashboard/my-orders" routerLinkActive="active">
+          <span>My Orders</span>
+        </li>
+        <li routerLink="/dashboard/prescriptions" routerLinkActive="active">
+          <span>Prescriptions</span>
+        </li>
+        <!-- <li routerLink="/dashboard/wishlist" routerLinkActive="active">
+          <span>Wishlist</span>
+        </li> -->
+        <li routerLink="/dashboard/addresses" routerLinkActive="active">
+          <span>Addresses</span>
+        </li>
+        <li routerLink="/dashboard/shopping-cart" routerLinkActive="active">
+          <span>Shopping Cart</span>
+        </li>
+        <!-- <li routerLink="/dashboard/payment-method" routerLinkActive="active">
+          <span>Payment Method</span>
+        </li> -->
+        <li routerLink="/dashboard/account-settings" routerLinkActive="active">
+          <span>Account Settings</span>
+        </li>
+        <li routerLink="/dashboard/support" routerLinkActive="active">
+          <span>Support</span>
+        </li>
+        <li (click)="logout()">
+          <span>Logout</span>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+</div>

@@ -1,0 +1,137 @@
+<div class="account-settings">
+  <div class="page-header">
+    <h1>Account Settings</h1>
+    <p>Manage your profile, preferences and security.</p>
+  </div>
+
+  <!-- PERSONAL INFO -->
+  <section class="section-card">
+    <div class="section-header">
+      <h2>Personal Information</h2>
+      <button
+        class="edit-btn"
+        *ngIf="!editPersonal"
+        (click)="enablePersonalEdit()"
+      >
+        Edit
+      </button>
+    </div>
+
+    <div class="info" *ngIf="!editPersonal">
+      <div><strong>Full Name:</strong> {{ user?.fullName }}</div>
+      <div><strong>Email:</strong> {{ user?.email }}</div>
+      <div><strong>Phone:</strong> {{ user?.phone || "Not set" }}</div>
+      <div><strong>Date of Birth:</strong> 12 Jan 2002</div>
+      <div><strong>Member Since:</strong> Jan 2022</div>
+    </div>
+
+    <form class="info" *ngIf="editPersonal" (ngSubmit)="savePersonalInfo()">
+      <div>
+        <strong>Full Name:</strong>
+        <input
+          type="text"
+          [(ngModel)]="updatedUser.fullName"
+          name="fullName"
+          required
+        />
+      </div>
+      <div>
+        <strong>Email:</strong>
+        <input
+          type="email"
+          [(ngModel)]="updatedUser.email"
+          name="email"
+          required
+        />
+      </div>
+      <div>
+        <strong>Phone:</strong>
+        <input type="text" [(ngModel)]="updatedUser.phone" name="phone" />
+      </div>
+      <button class="primary-btn" type="submit">Save</button>
+      <button
+        class="secondary-btn"
+        type="button"
+        (click)="cancelPersonalEdit()"
+      >
+        Cancel
+      </button>
+    </form>
+  </section>
+
+  <!-- ACCOUNT SECURITY -->
+  <section class="section-card">
+    <div class="section-header">
+      <h2>Account Security</h2>
+      <button
+        class="edit-btn"
+        *ngIf="!editSecurity"
+        (click)="enableSecurityEdit()"
+      >
+        Edit
+      </button>
+    </div>
+
+    <div class="info" *ngIf="!editSecurity">
+      <div><strong>Password:</strong> ●●●●●●●●</div>
+      <div>Last changed 3 months ago</div>
+    </div>
+
+    <form class="info" *ngIf="editSecurity" (ngSubmit)="savePassword()">
+      <div>
+        <strong>New Password:</strong>
+        <input
+          type="password"
+          [(ngModel)]="updatedUser.password"
+          name="password"
+          required
+        />
+      </div>
+      <div>
+        <strong>Confirm Password:</strong>
+        <input
+          type="password"
+          [(ngModel)]="updatedUser.confirmPassword"
+          name="confirmPassword"
+          required
+        />
+      </div>
+      <button class="primary-btn" type="submit">Save Password</button>
+      <button
+        class="secondary-btn"
+        type="button"
+        (click)="cancelSecurityEdit()"
+      >
+        Cancel
+      </button>
+    </form>
+  </section>
+
+  <!-- NOTIFICATION PREFERENCES -->
+  <section class="section-card">
+    <h2>Notification Preferences</h2>
+    <div class="toggle-group">
+      <label>Email Notifications</label>
+      <input
+        type="checkbox"
+        [checked]="notificationPrefs.email"
+        (change)="togglePreference('email')"
+      />
+    </div>
+
+    <div class="toggle-group">
+      <label>SMS Notifications</label>
+      <input
+        type="checkbox"
+        [checked]="notificationPrefs.sms"
+        (change)="togglePreference('sms')"
+      />
+    </div>
+  </section>
+
+  <!-- ACCOUNT ACTIONS -->
+  <section class="section-card danger-zone">
+    <h2>Account Actions</h2>
+    <button class="danger-btn" (click)="deleteAccount()">Delete Account</button>
+  </section>
+</div>

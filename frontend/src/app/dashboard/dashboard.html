@@ -1,0 +1,9 @@
+<div *ngIf="user" class="welcome-box">
+  <h2>Welcome back, {{ user.fullName || user.username }}!</h2>
+  <p>Email: {{ user.email }}</p>
+</div>
+
+<!-- Optional fallback -->
+<div *ngIf="!user">
+  <p>❌ Not logged in. Please login to access dashboard.</p>
+</div>

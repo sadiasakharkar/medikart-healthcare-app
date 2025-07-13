@@ -1,0 +1,148 @@
+.
+├── HELP.md
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+├── project-structure.txt
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── example
+│   │   │           └── MediKart
+│   │   │               ├── MediKartApplication.java
+│   │   │               ├── controller
+│   │   │               │   ├── AdminProductController.java
+│   │   │               │   ├── CartController.java
+│   │   │               │   ├── CategoryController.java
+│   │   │               │   ├── OrderController.java
+│   │   │               │   ├── PrescriptionController.java
+│   │   │               │   ├── UserController.java
+│   │   │               │   └── WishlistController.java
+│   │   │               ├── dto
+│   │   │               │   ├── DashboardResponse.java
+│   │   │               │   └── LoginRequest.java
+│   │   │               ├── model
+│   │   │               │   ├── CartItem.java
+│   │   │               │   ├── Category.java
+│   │   │               │   ├── Order.java
+│   │   │               │   ├── Prescription.java
+│   │   │               │   ├── Product.java
+│   │   │               │   ├── User.java
+│   │   │               │   └── WishlistItem.java
+│   │   │               ├── repository
+│   │   │               │   ├── CartItemRepository.java
+│   │   │               │   ├── CartRepository.java
+│   │   │               │   ├── CategoryRepository.java
+│   │   │               │   ├── OrderRepository.java
+│   │   │               │   ├── PrescriptionRepository.java
+│   │   │               │   ├── ProductRepository.java
+│   │   │               │   ├── UserRepository.java
+│   │   │               │   └── WishlistRepository.java
+│   │   │               └── service
+│   │   │                   ├── CartService.java
+│   │   │                   ├── CategoryService.java
+│   │   │                   ├── OrderService.java
+│   │   │                   ├── ProductService.java
+│   │   │                   ├── UserService.java
+│   │   │                   ├── WishlistService.java
+│   │   │                   └── impl
+│   │   │                       ├── CartServiceImpl.java
+│   │   │                       ├── OrderServiceImpl.java
+│   │   │                       ├── ProductServiceImpl.java
+│   │   │                       ├── UserServiceImpl.java
+│   │   │                       └── WishlistServiceImpl.java
+│   │   └── resources
+│   │       ├── application.properties
+│   │       ├── static
+│   │       │   ├── cart.html
+│   │       │   ├── index.html
+│   │       │   └── payment.html
+│   │       └── templates
+│   └── test
+│       └── java
+│           └── com
+│               └── example
+│                   └── MediKart
+│                       └── MediKartApplicationTests.java
+└── target
+    ├── MediKart-0.0.1-SNAPSHOT.jar
+    ├── MediKart-0.0.1-SNAPSHOT.jar.original
+    ├── classes
+    │   ├── application.properties
+    │   ├── com
+    │   │   └── example
+    │   │       └── MediKart
+    │   │           ├── MediKartApplication.class
+    │   │           ├── controller
+    │   │           │   ├── AdminProductController.class
+    │   │           │   ├── CartController.class
+    │   │           │   ├── CategoryController.class
+    │   │           │   ├── OrderController.class
+    │   │           │   ├── PrescriptionController.class
+    │   │           │   ├── UserController.class
+    │   │           │   └── WishlistController.class
+    │   │           ├── dto
+    │   │           │   ├── DashboardResponse.class
+    │   │           │   └── LoginRequest.class
+    │   │           ├── model
+    │   │           │   ├── CartItem.class
+    │   │           │   ├── Category.class
+    │   │           │   ├── Order.class
+    │   │           │   ├── Prescription$PrescriptionBuilder.class
+    │   │           │   ├── Prescription.class
+    │   │           │   ├── Product.class
+    │   │           │   ├── User.class
+    │   │           │   └── WishlistItem.class
+    │   │           ├── repository
+    │   │           │   ├── CartItemRepository.class
+    │   │           │   ├── CartRepository.class
+    │   │           │   ├── CategoryRepository.class
+    │   │           │   ├── OrderRepository.class
+    │   │           │   ├── PrescriptionRepository.class
+    │   │           │   ├── ProductRepository.class
+    │   │           │   ├── UserRepository.class
+    │   │           │   └── WishlistRepository.class
+    │   │           └── service
+    │   │               ├── CartService.class
+    │   │               ├── CategoryService.class
+    │   │               ├── OrderService.class
+    │   │               ├── ProductService.class
+    │   │               ├── UserService.class
+    │   │               ├── WishlistService.class
+    │   │               └── impl
+    │   │                   ├── CartServiceImpl.class
+    │   │                   ├── OrderServiceImpl.class
+    │   │                   ├── ProductServiceImpl.class
+    │   │                   ├── UserServiceImpl.class
+    │   │                   └── WishlistServiceImpl.class
+    │   └── static
+    │       ├── cart.html
+    │       ├── index.html
+    │       └── payment.html
+    ├── generated-sources
+    │   └── annotations
+    ├── generated-test-sources
+    │   └── test-annotations
+    ├── maven-archiver
+    │   └── pom.properties
+    ├── maven-status
+    │   └── maven-compiler-plugin
+    │       ├── compile
+    │       │   └── default-compile
+    │       │       ├── createdFiles.lst
+    │       │       └── inputFiles.lst
+    │       └── testCompile
+    │           └── default-testCompile
+    │               ├── createdFiles.lst
+    │               └── inputFiles.lst
+    ├── surefire-reports
+    │   ├── TEST-com.example.MediKart.MediKartApplicationTests.xml
+    │   └── com.example.MediKart.MediKartApplicationTests.txt
+    └── test-classes
+        └── com
+            └── example
+                └── MediKart
+                    └── MediKartApplicationTests.class
+
+49 directories, 97 files

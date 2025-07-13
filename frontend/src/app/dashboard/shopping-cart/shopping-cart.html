@@ -1,0 +1,131 @@
+<div class="cart-checkout-page">
+  <h1>Shopping Cart</h1>
+  <p class="subheading">Review items before you checkout</p>
+
+  <div class="cart-grid">
+    <!-- Cart Items Column -->
+    <div class="cart-items">
+      <h2>
+        Cart Items ({{ cartItems.length }})
+        <span class="clear-cart" (click)="clearCart()">Clear Cart</span>
+      </h2>
+
+      <div class="cart-item" *ngFor="let item of cartItems; let i = index">
+        <div class="info">
+          <h3>{{ item.productName }}</h3>
+          <p *ngIf="item.brand">{{ item.brand }}</p>
+          <div class="qty-price">
+            <button (click)="decreaseQty(i)">−</button>
+            <span>{{ item.quantity }}</span>
+            <button (click)="increaseQty(i)">+</button>
+            <span class="price"
+              >₹{{ (item.price ?? 0) * (item.quantity ?? 0) }}</span
+            >
+            <button class="delete" (click)="removeItem(i)">✕</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="coupon-section">
+        <input [(ngModel)]="couponCode" placeholder="Enter coupon code" />
+        <button (click)="applyCoupon()">Apply</button>
+      </div>
+
+      <div class="cart-buttons">
+        <button routerLink="/dashboard/health-home">Continue Shopping</button>
+        <button (click)="updateCart()">Update Cart</button>
+      </div>
+    </div>
+
+    <!-- Summary Column -->
+    <div class="cart-summary">
+      <h2>Order Summary</h2>
+      <div class="summary-row">
+        <span>Subtotal</span><span>₹{{ subtotal }}</span>
+      </div>
+      <div class="summary-row">
+        <span>Discount</span><span>-₹{{ discount }}</span>
+      </div>
+      <div class="summary-row">
+        <span>Delivery Charges</span><span>₹{{ deliveryCharge }}</span>
+      </div>
+      <div class="summary-row">
+        <span>Tax</span><span>₹{{ tax.toFixed(2) }}</span>
+      </div>
+      <div class="summary-row total">
+        <strong>Total</strong><strong>₹{{ total.toFixed(2) }}</strong>
+      </div>
+      <button class="proceed-btn" (click)="proceedToPayment()">
+        Proceed to Payment
+      </button>
+      <p class="note">Free delivery on orders above ₹500</p>
+    </div>
+  </div>
+
+  <!-- Checkout Section -->
+  <div *ngIf="showCheckout" class="checkout">
+    <h2>Checkout</h2>
+    <p>Complete your order</p>
+
+    <div class="checkout-grid">
+      <div class="shipping">
+        <h3>Shipping Address</h3>
+        <div class="address-box">
+          <p><strong>John Doe</strong></p>
+          <p>Apartment 45, Green Park, Delhi</p>
+          <p>Phone: 9876543210</p>
+          <button class="edit">✎</button>
+        </div>
+        <button class="add-new">+ Add New Address</button>
+      </div>
+
+      <div class="payment">
+        <h3>Payment Method</h3>
+        <label
+          ><input type="radio" name="payment" value="card" checked />
+          Credit/Debit Card</label
+        >
+        <label
+          ><input type="radio" name="payment" value="netbanking" /> Net
+          Banking</label
+        >
+        <label><input type="radio" name="payment" value="upi" /> UPI</label>
+        <label
+          ><input type="radio" name="payment" value="cod" /> Cash on
+          Delivery</label
+        >
+      </div>
+
+      <div class="final-summary">
+        <h3>Order Summary</h3>
+        <ul>
+          <li *ngFor="let item of cartItems">
+            <span>{{ item.productName }}</span>
+            <span class="price"
+              >₹{{ (item.price ?? 0) * (item.quantity ?? 0) }}</span
+            >
+          </li>
+        </ul>
+        <div class="summary-row">
+          <span>Subtotal</span><span>₹{{ subtotal }}</span>
+        </div>
+        <div class="summary-row">
+          <span>Discount</span><span>-₹{{ discount }}</span>
+        </div>
+        <div class="summary-row">
+          <span>Delivery</span><span>₹{{ deliveryCharge }}</span>
+        </div>
+        <div class="summary-row">
+          <span>Tax</span><span>₹{{ tax.toFixed(2) }}</span>
+        </div>
+        <div class="summary-row total">
+          <strong>Total</strong><strong>₹{{ total.toFixed(2) }}</strong>
+        </div>
+        <button class="place-order">Place Order</button>
+        <p class="note">
+          By placing your order, you agree to our Terms & Conditions.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

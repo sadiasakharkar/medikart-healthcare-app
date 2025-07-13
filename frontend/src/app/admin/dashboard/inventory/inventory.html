@@ -1,0 +1,110 @@
+<div class="inventory-container">
+  <div class="inventory-header">
+    <h2>Inventory Management</h2>
+    <button class="btn-add" (click)="toggleAddForm()">
+      {{ showAddForm ? "Close" : "+ Add New Stock" }}
+    </button>
+  </div>
+
+  <!-- ✅ Add Product Form -->
+  <div *ngIf="showAddForm" class="add-product-form">
+    <h3>Add New Product</h3>
+    <form [formGroup]="productForm" (ngSubmit)="addProduct()">
+      <input
+        type="text"
+        formControlName="name"
+        placeholder="Medicine Name"
+        required
+      />
+      <input type="text" formControlName="category" placeholder="Category" />
+      <input
+        type="number"
+        formControlName="quantity"
+        placeholder="Quantity"
+        required
+      />
+      <input
+        type="number"
+        formControlName="price"
+        placeholder="Price"
+        required
+      />
+      <input type="text" formControlName="status" placeholder="Stock Status" />
+      <input type="date" formControlName="expiry" placeholder="Expiry Date" />
+      <input type="text" formControlName="imageUrl" placeholder="Image URL" />
+      <input
+        type="text"
+        formControlName="description"
+        placeholder="Description"
+        required
+      />
+      <!-- ✅ MISSING FIELD FIXED -->
+      <button type="submit">Add Product</button>
+    </form>
+  </div>
+
+  <!-- ✅ Filters -->
+  <div class="inventory-filters">
+    <input
+      type="text"
+      placeholder="🔍 Search medicine..."
+      (input)="onSearch($event)"
+    />
+    <select (change)="onCategoryChange($event)">
+      <option value="">All Categories</option>
+      <option value="tablet">Tablet</option>
+      <option value="syrup">Syrup</option>
+      <option value="capsule">Capsule</option>
+      <option value="drop">Drop</option>
+    </select>
+    <select (change)="onStatusChange($event)">
+      <option value="">All Status</option>
+      <option value="In Stock">In Stock</option>
+      <option value="Low Stock">Low Stock</option>
+      <option value="Out of Stock">Out of Stock</option>
+    </select>
+  </div>
+
+  <!-- ✅ Product Table -->
+  <table class="inventory-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Medicine Name</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Status</th>
+        <th>Expiry</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of filteredItems">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.category }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>₹{{ item.price }}</td>
+        <td>
+          <span
+            [ngClass]="{
+              'in-stock': item.status === 'In Stock',
+              'low-stock': item.status === 'Low Stock',
+              'out-of-stock': item.status === 'Out of Stock'
+            }"
+          >
+            {{ item.status }}
+          </span>
+        </td>
+        <td>{{ item.expiry }}</td>
+        <td>
+          <button class="btn-edit" (click)="editItem(item)">✏️ Edit</button>
+          <button class="btn-delete" (click)="deleteItem(item)">
+            🗑️ Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

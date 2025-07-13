@@ -1,0 +1,68 @@
+<div class="wishlist-page">
+  <div class="header">
+    <div class="heading-text">
+      <h1>My Wishlist</h1>
+      <p>Save your favorite medicines and healthcare products here.</p>
+    </div>
+    <button class="btn-primary">Share Wishlist</button>
+  </div>
+
+  <div class="wishlist-stats">
+    <div class="stat"><strong>12</strong> Items</div>
+    <div class="stat"><strong>8</strong> In Stock</div>
+    <div class="stat">₹<strong>2400</strong> Total Value</div>
+  </div>
+
+  <div class="wishlist-filters">
+    <input type="text" placeholder="Search in Wishlist..." />
+    <select>
+      <option>All Categories</option>
+      <option>Medicines</option>
+      <option>Healthcare</option>
+    </select>
+    <select>
+      <option>All Brands</option>
+      <option>Himalaya</option>
+      <option>Cipla</option>
+    </select>
+    <select>
+      <option>Recently Added</option>
+      <option>Price: Low to High</option>
+      <option>Price: High to Low</option>
+    </select>
+  </div>
+
+  <div class="wishlist-grid">
+    <div class="wishlist-card" *ngFor="let product of products">
+      <div class="card-header">
+        <img [src]="product.img" alt="Product image" />
+        <div class="wishlist-icon">♥</div>
+      </div>
+      <div class="card-body">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.desc }}</p>
+        <div class="price">
+          <span class="original">₹{{ product.original }}</span>
+          <span class="discounted">₹{{ product.price }}</span>
+        </div>
+        <div class="stock" [class.out]="!product.stock">
+          {{ product.stock ? "In Stock" : "Out of Stock" }}
+        </div>
+        <div class="card-actions">
+          <button class="btn-primary" [disabled]="!product.stock">
+            Add to Cart
+          </button>
+          <button class="btn-secondary">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wishlist-footer">
+    <button class="btn-primary">Add All to Cart</button>
+    <button class="btn-secondary">Clear Wishlist</button>
+    <button class="btn-link">Copy Link</button>
+    <button class="btn-link">Email</button>
+    <button class="btn-link">Share via WhatsApp</button>
+  </div>
+</div>
